@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:11:22 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/10 15:46:52 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:05:24 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,24 @@ ScavTrap::~ScavTrap()
 }
 
 /******************************* Public methods *******************************/
+void	ScavTrap::attack(const std::string &target)
+{
+	if (this->_hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " (" << this->_hitPoints << " / 100) is dead and can't attack." << std::endl;
+		return ;
+	}
+	
+	if (this->_energyPoints == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " (" << this->_hitPoints << " / 100) is out of energy points." << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << this->_name << " (" << this->_hitPoints << " / 100) attacks " << target << ", causing ";
+	std::cout << this->_attackDamage << " points of damage!" << std::endl;
+	this->_energyPoints--;
+}
+
 void	ScavTrap::guardGate()
 {
 	if (this->_hitPoints == 0)

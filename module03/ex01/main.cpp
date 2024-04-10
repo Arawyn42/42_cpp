@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:23:35 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/10 16:24:41 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:04:39 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	main()
 	std::cout << '\n';
 		
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << '\n';
 
 	John.attack("Billy");
-	Billy.takeDamage(John.getAttackDamage());
+	Billy.takeDamage(20);
 	std::cout << '\n';
 	
 	John.beRepaired(4);
@@ -32,39 +32,39 @@ int	main()
 	std::cout << '\n';
 
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << '\n';
 
 	John.attack("Billy");
-	Billy.takeDamage(John.getAttackDamage());
+	Billy.takeDamage(20);
 	std::cout << '\n';
 
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << '\n';
 
 	John.attack("Billy");
-	Billy.takeDamage(John.getAttackDamage());
+	Billy.takeDamage(20);
 	std::cout << '\n';
 	
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << std::endl;
 
 	John.attack("Billy");
-	Billy.takeDamage(John.getAttackDamage());
+	Billy.takeDamage(20);
 	std::cout << '\n';
 	
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << std::endl;
 
 	John.attack("Billy");
-	Billy.takeDamage(John.getAttackDamage());
+	Billy.takeDamage(20);
 	std::cout << '\n';
 	
 	Billy.attack("John");
-	John.takeDamage(Billy.getAttackDamage());
+	John.takeDamage(20);
 	std::cout << std::endl;
 
 	John.attack("Billy");
