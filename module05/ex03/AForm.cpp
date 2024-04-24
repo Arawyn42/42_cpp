@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:08:55 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 22:02:45 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:58:37 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,19 @@ void	AForm::setGradeToExecute(const int gradeToExecute) {	const_cast<int&>(this-
 void	AForm::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= getGradeToSign())
-	{
 		setIsSigned(true);
-		bureaucrat.signForm(*this, getIsSigned());
-	}
 	else
-	{
-		bureaucrat.signForm(*this, getIsSigned());
 		throw (AForm::GradeTooLowException());
-	}
 }
 
 void	AForm::execute(const Bureaucrat &executor) const
 {
-	this->executeFormAction(executor);
+	if (!this->getIsSigned())
+		throw (AForm::notSignedException());
+	else if (executor.getGrade() > this->getGradeToExecute())
+		throw (Bureaucrat::GradeTooLowException());
+	else
+		this->executeFormAction(executor);
 }
 
 

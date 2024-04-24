@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 20:16:55 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 23:03:38 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:58:49 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,19 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 /********************************** Members ***********************************/
 void	ShrubberyCreationForm::executeFormAction(Bureaucrat const &executor) const
 {
-	if (!this->getIsSigned())
-		throw (AForm::notSignedException());
-	else if (executor.getGrade() > this->getGradeToExecute())
-		throw (Bureaucrat::GradeTooLowException());
-	else
-	{
-		std::ofstream	file;
-		file.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
-		file << "               ,@@@@@@@,\n"
-			<<	"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
-			<<	"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
-			<<	"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n"
-			<<	"   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n"
-			<<	"   %&&%/ %&%%&&@@\\ V /@@' '88\\8 '/88'\n"
-			<<	"   '&%\\ ' /%&'    |.|        \\ '|8'\n"
-			<<	"       |o|        | |         | |\n"
-			<<	"       |.|        | |         | |\n"
-			<<	"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_\n";
-		file.close();
-		std::cout << executor.getName() << " executed " << this->getName() << ". " << this->getTarget();
-		std::cout << "_shrubbery has been created." << std::endl;
-	}
+	std::ofstream	file;
+	file.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
+	file << "               ,@@@@@@@,\n"
+		<<	"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
+		<<	"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
+		<<	"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n"
+		<<	"   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n"
+		<<	"   %&&%/ %&%%&&@@\\ V /@@' '88\\8 '/88'\n"
+		<<	"   '&%\\ ' /%&'    |.|        \\ '|8'\n"
+		<<	"       |o|        | |         | |\n"
+		<<	"       |.|        | |         | |\n"
+		<<	"    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_\n";
+	file.close();
+	std::cout << executor.getName() << " executed " << this->getName() << ". " << this->getTarget();
+	std::cout << "_shrubbery has been created." << std::endl;
 }

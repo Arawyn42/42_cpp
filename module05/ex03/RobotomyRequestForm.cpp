@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 21:58:15 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 23:05:53 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:59:02 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,55 +51,48 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &t
 /********************************** Members ***********************************/
 void	RobotomyRequestForm::executeFormAction(Bureaucrat const &executor) const
 {
-	if (!this->getIsSigned())
-		throw (AForm::notSignedException());
-	else if (executor.getGrade() > this->getGradeToExecute())
-		throw (Bureaucrat::GradeTooLowException());
+	std::srand(std::time(NULL));
+	std::cout << "BzzZzdrRrzZZzzZbZZrrrZzzzzzzZZZZ..." << std::endl;
+	if (std::rand() % 2)
+	{
+		std::ofstream	file;
+		file.open((this->getTarget() + "_robotomized").c_str(), std::ofstream::in | std::ofstream::trunc);
+		file << "                                         |\n"
+			<<	"                                         |\n"
+			<<	"                                         |\n"
+			<<	"                                         |\n"
+			<<	"   _______                   ________    |\n"
+			<<	"  |ooooooo|      ____       | __  __ |   |\n"
+			<<	"  |[]+++[]|     [____]      |/  \\/  \\|   |\n"
+			<<	"  |+ ___ +|     ]()()[      |\\__/\\__/|   |\n"
+			<<	"  |:|   |:|   ___\\__/___    |[][][][]|   |\n"
+			<<	"  |:|___|:|  |__|    |__|   |++++++++|   |\n"
+			<<	"  |[]===[]|   |_|_/\\_|_|    | ______ |   |\n"
+			<<	"_ ||||||||| _ | | __ | | __ ||______|| __|\n"
+			<<	"  |_______|   |_|[::]|_|    |________|   \\\n"
+			<<	"              \\_|_||_|_/                  \\\n"
+			<<	"                |_||_|                     \\\n"
+			<<	"               _|_||_|_                     \\\n"
+			<<	"      ____    |___||___|                     \\\n"
+			<<	"     /  __\\          ____                     \\\n"
+			<<	"     \\( oo          (___ \\                     \\\n"
+			<<	"     _\\_o/           oo~)/\n"
+			<<	"    / \\|/ \\         _\\-_/_\n"
+			<<	"   / / __\\ \\___    / \\|/  \\\n"
+			<<	"   \\ \\|   |__/_)  / / .- \\ \\\n"
+			<<	"    \\/_)  |       \\ \\ .  /_/\n"
+			<<	"     ||___|        \\/___(_/\n"
+			<<	"     | | |          | |  |\n"
+			<<	"     | | |          | |  |\n"
+			<<	"     |_|_|          |_|__|\n"
+			<<	"     [__)_)        (_(___]        R080T0M1Z3D...\n";
+		file.close();
+		std::cout << executor.getName() << " executed " << this->getName() << ". " << this->getTarget();
+		std::cout << " has been robotomized." << std::endl;
+	}
 	else
 	{
-		std::srand(std::time(NULL));
-		std::cout << "BzzZzdrRrzZZzzZbZZrrrZzzzzzzZZZZ..." << std::endl;
-		if (std::rand() % 2)
-		{
-			std::ofstream	file;
-			file.open((this->getTarget() + "_robotomized").c_str(), std::ofstream::in | std::ofstream::trunc);
-			file << "                                         |\n"
-				<<	"                                         |\n"
-				<<	"                                         |\n"
-				<<	"                                         |\n"
-				<<	"   _______                   ________    |\n"
-				<<	"  |ooooooo|      ____       | __  __ |   |\n"
-				<<	"  |[]+++[]|     [____]      |/  \\/  \\|   |\n"
-				<<	"  |+ ___ +|     ]()()[      |\\__/\\__/|   |\n"
-				<<	"  |:|   |:|   ___\\__/___    |[][][][]|   |\n"
-				<<	"  |:|___|:|  |__|    |__|   |++++++++|   |\n"
-				<<	"  |[]===[]|   |_|_/\\_|_|    | ______ |   |\n"
-				<<	"_ ||||||||| _ | | __ | | __ ||______|| __|\n"
-				<<	"  |_______|   |_|[::]|_|    |________|   \\\n"
-				<<	"              \\_|_||_|_/                  \\\n"
-				<<	"                |_||_|                     \\\n"
-				<<	"               _|_||_|_                     \\\n"
-				<<	"      ____    |___||___|                     \\\n"
-				<<	"     /  __\\          ____                     \\\n"
-				<<	"     \\( oo          (___ \\                     \\\n"
-				<<	"     _\\_o/           oo~)/\n"
-				<<	"    / \\|/ \\         _\\-_/_\n"
-				<<	"   / / __\\ \\___    / \\|/  \\\n"
-				<<	"   \\ \\|   |__/_)  / / .- \\ \\\n"
-				<<	"    \\/_)  |       \\ \\ .  /_/\n"
-				<<	"     ||___|        \\/___(_/\n"
-				<<	"     | | |          | |  |\n"
-				<<	"     | | |          | |  |\n"
-				<<	"     |_|_|          |_|__|\n"
-				<<	"     [__)_)        (_(___]        R080T0M1Z3D...\n";
-			file.close();
-			std::cout << executor.getName() << " executed " << this->getName() << ". " << this->getTarget();
-			std::cout << " has been robotomized." << std::endl;
-		}
-		else
-		{
-			std::cout << executor.getName() << " tried to execute " << this->getName() << " but it failed... ";
-			std::cout << this->getTarget() << "'s robotomy failure!";
-		}
+		std::cout << executor.getName() << " tried to execute " << this->getName() << " but it failed... ";
+		std::cout << this->getTarget() << "'s robotomy failure!";
 	}
 }

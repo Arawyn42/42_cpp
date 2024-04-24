@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:25:24 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 22:53:13 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:44:00 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Bureaucrat
 		/* Members */
 		void		incrementGrade();
 		void		decrementGrade();
-		void		signForm(AForm &form, bool isSigned);
+		void		signForm(AForm &form);
 		void		executeForm(const AForm &form);
 
 		/* Exceptions handlers */

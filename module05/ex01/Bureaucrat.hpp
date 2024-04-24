@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:25:24 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 15:15:23 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:38:11 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Bureaucrat
 		/* Members */
 		void		incrementGrade();
 		void		decrementGrade();
-		void		signForm(Form &form, bool isSigned);
+		void		signForm(Form &form);
 
 		/* Exceptions handlers */
 		class	GradeTooHighException : public std::exception

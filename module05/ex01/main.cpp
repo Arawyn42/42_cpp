@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:10:31 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 15:23:58 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:41:01 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ int	main()
 			Form		form("Form", 10, 5);
 			std::cout << form << '\n';
 			std::cout << "Signing form..." << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
+			std::cout << "Signing form again..." << '\n';
+			bob.signForm(form);
 		}
 		catch (const std::exception &e)
 		{
@@ -66,7 +68,7 @@ int	main()
 			Form		form("Form", 7, 5);
 			std::cout << form << '\n';
 			std::cout << "Signing form..." << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 		}
 		catch (const std::exception &e)
 		{

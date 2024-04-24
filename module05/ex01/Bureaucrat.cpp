@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:40:21 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 15:23:20 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:40:05 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,19 @@ void	Bureaucrat::decrementGrade()
 		this->setGrade(this->_grade + 1);
 }
 
-void	Bureaucrat::signForm(Form &form, bool isSigned)
+void	Bureaucrat::signForm(Form &form)
 {
-	if (isSigned)
+	if (this->getGrade() <= form.getGradeToSign() && !form.getIsSigned())
+	{
+		form.beSigned(*this);
 		std::cout << *this << " signed " << form << std::endl;
+		return ;
+	}
+	else if (this->getGrade() <= form.getGradeToSign() && form.getIsSigned())
+		std::cout << *this << " couldn't sign " << form << " because it's already signed." << std::endl;
 	else
 		std::cout << *this << " couldn't sign " << form << " because his grade is too low." << std::endl;
+	form.beSigned(*this);
 }
 
 

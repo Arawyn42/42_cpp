@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:08:55 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 15:23:03 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:34:01 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,9 @@ void	Form::setGradeToExecute(const int gradeToExecute)
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= getGradeToSign())
-	{
 		setIsSigned(true);
-		bureaucrat.signForm(*this, getIsSigned());
-	}
 	else
-	{
-		bureaucrat.signForm(*this, getIsSigned());
 		throw (Form::GradeTooLowException());
-	}
 }
 
 

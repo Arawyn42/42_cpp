@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:10:31 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 23:08:36 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:45:58 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main()
 			std::cout << bob << '\n';
 			ShrubberyCreationForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)
@@ -57,7 +57,7 @@ int	main()
 			std::cout << bob << '\n';
 			ShrubberyCreationForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)
@@ -74,7 +74,7 @@ int	main()
 			std::cout << bob << '\n';
 			RobotomyRequestForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)
@@ -107,7 +107,7 @@ int	main()
 			std::cout << bob << '\n';
 			RobotomyRequestForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)
@@ -124,7 +124,7 @@ int	main()
 			std::cout << bob << '\n';
 			PresidentialPardonForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)
@@ -157,7 +157,7 @@ int	main()
 			std::cout << bob << '\n';
 			PresidentialPardonForm	form("file");
 			std::cout << form << '\n';
-			form.beSigned(bob);
+			bob.signForm(form);
 			bob.executeForm(form);
 		}
 		catch (const std::exception &e)

@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:10:31 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/24 21:22:08 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 22:00:07 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main()
 			std::cout << bob << '\n';
 			AForm	*form = intern.makeForm("shrubbery creation", "file");
 			std::cout << *form << '\n';
-			form->beSigned(bob);
+			bob.signForm(*form);
 			bob.executeForm(*form);
 			delete form;
 		}
@@ -36,6 +36,7 @@ int	main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
+	std::cout << std::endl;
 
 	std::cout << "\n------------------ ROBOTOMY ------------------" << std::endl;
 	{
@@ -45,7 +46,7 @@ int	main()
 			std::cout << bob << '\n';
 			AForm	*form = intern.makeForm("robotomy request", "file");
 			std::cout << *form << '\n';
-			form->beSigned(bob);
+			bob.signForm(*form);
 			bob.executeForm(*form);
 			delete form;
 		}
@@ -54,6 +55,7 @@ int	main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
+	std::cout << std::endl;
 
 	std::cout << "\n---------------- PRESIDENTIAL ----------------" << std::endl;
 	{
@@ -63,7 +65,7 @@ int	main()
 			std::cout << bob << '\n';
 			AForm	*form = intern.makeForm("presidential pardon", "file");
 			std::cout << *form << '\n';
-			form->beSigned(bob);
+			bob.signForm(*form);
 			bob.executeForm(*form);
 			delete form;
 		}
@@ -72,6 +74,7 @@ int	main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
+	std::cout << std::endl;
 
 	std::cout << "\n--------------- NOT EXISTING  ----------------" << std::endl;
 	{
@@ -81,7 +84,7 @@ int	main()
 			std::cout << bob << '\n';
 			AForm	*form = intern.makeForm("random", "file");
 			std::cout << *form << '\n';
-			form->beSigned(bob);
+			bob.signForm(*form);
 			bob.executeForm(*form);
 			delete form;
 		}
@@ -90,7 +93,6 @@ int	main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
-
 	std::cout << std::endl;
 	
 	return (EXIT_SUCCESS);
