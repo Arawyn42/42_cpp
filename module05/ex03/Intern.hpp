@@ -6,14 +6,16 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:00:16 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/24 19:16:16 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:09:18 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
-# include "Bureaucrat.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
 class Intern
 {
@@ -26,11 +28,15 @@ class Intern
 		/* Operators */
 		Intern  &operator=(const Intern &toCopy);
 
+		/* Exceptions */
+		class FormNotExisting : public std::exception
+		{
+			public:
+				const char	*what() const throw();
+		};
+
 		/* Members */
 		AForm	*makeForm(std::string name, std::string target);
-
-	private:
-	
 };
 
 #endif

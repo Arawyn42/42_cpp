@@ -6,59 +6,30 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:10:31 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/22 23:08:36 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:22:08 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
+	Intern	intern;
+	
 	std::cout << "\n----------------- SHRUBBERY ------------------" << std::endl;
 	{
 		try
 		{
 			Bureaucrat	bob("Bob", 100);
 			std::cout << bob << '\n';
-			ShrubberyCreationForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
-
-	std::cout << "\n------------ SHRUBBERY NOT SIGNED ------------" << std::endl;
-	{
-		try
-		{
-			Bureaucrat	bob("Bob", 100);
-			std::cout << bob << '\n';
-			ShrubberyCreationForm	form("file");
-			std::cout << form << '\n';
-			bob.executeForm(form);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
-	
-	std::cout << "\n---------- SHRUBBERY GRADE TOO LOW -----------" << std::endl;
-	{
-		try
-		{
-			Bureaucrat	bob("Bob", 140);
-			std::cout << bob << '\n';
-			ShrubberyCreationForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
+			AForm	*form = intern.makeForm("shrubbery creation", "file");
+			std::cout << *form << '\n';
+			form->beSigned(bob);
+			bob.executeForm(*form);
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -70,45 +41,13 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat			bob("Bob", 44);
+			Bureaucrat	bob("Bob", 44);
 			std::cout << bob << '\n';
-			RobotomyRequestForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
-
-	std::cout << "\n------------ ROBOTOMY NOT SIGNED -------------" << std::endl;
-	{
-		try
-		{
-			Bureaucrat			bob("Bob", 44);
-			std::cout << bob << '\n';
-			RobotomyRequestForm	form("file");
-			std::cout << form << '\n';
-			bob.executeForm(form);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
-	
-	std::cout << "\n---------- ROBOTOMY GRADE TOO LOW ------------" << std::endl;
-	{
-		try
-		{
-			Bureaucrat			bob("Bob", 66);
-			std::cout << bob << '\n';
-			RobotomyRequestForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
+			AForm	*form = intern.makeForm("robotomy request", "file");
+			std::cout << *form << '\n';
+			form->beSigned(bob);
+			bob.executeForm(*form);
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -120,12 +59,13 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat			bob("Bob", 4);
+			Bureaucrat	bob("Bob", 4);
 			std::cout << bob << '\n';
-			PresidentialPardonForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
+			AForm	*form = intern.makeForm("presidential pardon", "file");
+			std::cout << *form << '\n';
+			form->beSigned(bob);
+			bob.executeForm(*form);
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -133,38 +73,24 @@ int	main()
 		}
 	}
 
-	std::cout << "\n---------- PRESIDENTIAL NOT SIGNED -----------" << std::endl;
+	std::cout << "\n--------------- NOT EXISTING  ----------------" << std::endl;
 	{
 		try
 		{
-			Bureaucrat			bob("Bob", 4);
+			Bureaucrat	bob("Bob", 4);
 			std::cout << bob << '\n';
-			PresidentialPardonForm	form("file");
-			std::cout << form << '\n';
-			bob.executeForm(form);
+			AForm	*form = intern.makeForm("random", "file");
+			std::cout << *form << '\n';
+			form->beSigned(bob);
+			bob.executeForm(*form);
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	
-	std::cout << "\n-------- PRESIDENTIAL GRADE TOO LOW ----------" << std::endl;
-	{
-		try
-		{
-			Bureaucrat			bob("Bob", 20);
-			std::cout << bob << '\n';
-			PresidentialPardonForm	form("file");
-			std::cout << form << '\n';
-			form.beSigned(bob);
-			bob.executeForm(form);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
+
 	std::cout << std::endl;
 	
 	return (EXIT_SUCCESS);
