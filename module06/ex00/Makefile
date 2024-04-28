@@ -1,16 +1,11 @@
-NAME	=	bureaucrat
+NAME	=	convert
 
 CPP		=	c++
 
 FLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
 SRCS	=	main.cpp \
-			Bureaucrat.cpp \
-			AForm.cpp \
-			ShrubberyCreationForm.cpp \
-			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp \
-			Intern.cpp
+			ScalarConverter.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -26,7 +21,6 @@ all:		$(NAME)
 
 clean:
 	$(RM) $(OBJS)
-	$(RM) *_shrubbery *_robotomized *_pardoned
 
 fclean:		clean
 	$(RM) $(NAME)
