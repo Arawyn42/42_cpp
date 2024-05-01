@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:50:47 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/01 17:13:39 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:59:34 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ class Serializer
 	public:
 		static uintptr_t	serialize(Data *ptr);
 		static Data			*deserialize(uintptr_t raw);
+	
+	private:
+		Serializer();
+		Serializer(const Serializer &toCopy);
+		Serializer	&operator=(const Serializer &toCopy);
+		~Serializer();
 };
 
 #endif
