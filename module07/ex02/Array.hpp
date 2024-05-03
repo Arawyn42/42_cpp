@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:12:46 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/03 15:19:46 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:25:00 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,8 @@ Array<T>	&Array<T>::operator=(const Array &toCopy)
 {
 	if (this != &toCopy)
 	{
-		delete [] this->_array;
-	
 		this->_size = toCopy._size;
+		delete [] this->_array;
 		this->_array = new T[toCopy._size];
 		for (unsigned int i = 0 ; i < this->_size ; i++)
 			this->_array[i] = toCopy._array[i];
