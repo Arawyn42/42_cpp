@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:12:19 by drenassi          #+#    #+#             */
-/*   Updated: 2024/04/28 17:41:00 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:24:05 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,8 +167,8 @@ void	ScalarConverter::_printFloat(const std::string &str)
 		std::cout << "float: " << str << "f"  << std::endl;
 	else if (_isChar(str))
 		std::cout << "float: " << static_cast<float>(str.at(0)) << ".0f" << std::endl;
-	else if (f < FLT_MIN || f > FLT_MAX)
-		std::cout << "float: impossible" << std::endl;
+	else if (f < -std::numeric_limits<float>::infinity() || f > std::numeric_limits<float>::infinity())
+		std::cout << "float: impossible : " << INT_MIN << " < " << std::numeric_limits<float>::min() << std::endl;
 	else if (f == (int)f)
 		std::cout << "float: " << static_cast<float>(f) << ".0f" << std::endl;
 	else
@@ -187,7 +187,7 @@ void	ScalarConverter::_printDouble(const std::string &str)
 		std::cout << "double: " << str << std::endl;
 	else if (_isChar(str))
 		std::cout << "double: " << static_cast<double>(str.at(0)) << ".0" << std::endl;
-	else if (d < DBL_MIN || d > DBL_MAX)
+	else if (d < -std::numeric_limits<double>::infinity() || d > std::numeric_limits<double>::infinity())
 		std::cout << "double: impossible" << std::endl;
 	else if (d == (int)d)
 		std::cout << "double: " << static_cast<double>(d) << ".0" << std::endl;
