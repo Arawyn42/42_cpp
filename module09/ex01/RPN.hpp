@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:23:33 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/15 16:03:45 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:06:45 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ class RPN
 		};
 		
 		/* Methods */
-		void	isExpressionValid(const std::string &expression);
-		void	doOperation(double lhs, double rhs, char op);
+		void	_isExpressionValid(const std::string &expression) const;
+		void	_doOperation(double lhs, double rhs, char op);
 		
 };

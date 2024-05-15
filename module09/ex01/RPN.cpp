@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:45:02 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/15 16:03:37 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:07:03 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ RPN::RPN()
 
 RPN::RPN(const std::string &expression) : _expression(expression)
 {
-	isExpressionValid(expression);
+	_isExpressionValid(expression);
 }
 
 RPN::RPN(const RPN &toCopy)
@@ -62,7 +62,7 @@ const char	*RPN::StackTooSmallException::what() const throw()
 
 
 /********************************** Methods ***********************************/
-void	RPN::isExpressionValid(const std::string &expression)
+void	RPN::_isExpressionValid(const std::string &expression) const
 {
 	std::stringstream	ss(expression);
 	std::string			split;
@@ -77,7 +77,7 @@ void	RPN::isExpressionValid(const std::string &expression)
 	
 }
 
-void	RPN::doOperation(double lhs, double rhs, char op)
+void	RPN::_doOperation(double lhs, double rhs, char op)
 {
 	switch (op)
 	{
@@ -117,7 +117,7 @@ void	RPN::calculate()
 			_stack.pop();
 			lhs = _stack.top();
 			_stack.pop();
-			doOperation(lhs, rhs, *it);
+			_doOperation(lhs, rhs, *it);
 		}
 	}
 
