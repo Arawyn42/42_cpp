@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 22:52:53 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/10 00:10:29 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:53:47 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,48 +144,48 @@ int	main()
 		}
 	}
 
-	{
-		Span	span(12000);
+	// {
+	// 	Span	span(12000);
 		
-		std::cout << "Creating a span with 12000 random elements...\n" << std::endl;
-		try
-		{
-			span.addRandomNumbers(12000);
-			span.printElements();
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+	// 	std::cout << "Creating a span with 12000 random elements...\n" << std::endl;
+	// 	try
+	// 	{
+	// 		span.addRandomNumbers(12000);
+	// 		span.printElements();
+	// 	}
+	// 	catch (const std::exception &e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
 		
-		try
-		{
-			std::cout << "\nAdding one more elements...\n";
-			span.addNumber(5);
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+	// 	try
+	// 	{
+	// 		std::cout << "\nAdding one more elements...\n";
+	// 		span.addNumber(5);
+	// 	}
+	// 	catch (const std::exception &e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
 		
-		try
-		{
-			std::cout << "\nShortest Span = " << span.shortestSpan() << std::endl;
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+	// 	try
+	// 	{
+	// 		std::cout << "\nShortest Span = " << span.shortestSpan() << std::endl;
+	// 	}
+	// 	catch (const std::exception &e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
 		
-		try
-		{
-			std::cout << "\nLongest Span = " << span.longestSpan() << std::endl;
-		}
-		catch (const std::exception &e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
+	// 	try
+	// 	{
+	// 		std::cout << "\nLongest Span = " << span.longestSpan() << std::endl;
+	// 	}
+	// 	catch (const std::exception &e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 	
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:20:11 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/10 00:09:32 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:58:35 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,16 @@ int		Span::shortestSpan()
 	int					smallestDistance = std::abs(v.at(1) - v.at(0));
 	
 	std::sort(v.begin(), v.end());
-	for (std::vector<int>::iterator i = v.begin() ; i != v.end() - 1 ; i++)
-		if (std::abs(*(i + 1) - *i) < smallestDistance)
-			smallestDistance = std::abs(*(i + 1) - *i);
+	
+	for (std::vector<int>::iterator i = v.begin() ; i != v.end() ; i++)
+	{
+		if (i == v.begin())
+			continue ;
+		std::vector<int>::iterator j = i;
+		j--;
+		if (std::abs(*j - *i) < smallestDistance)
+			smallestDistance = std::abs(*j - *i);
+	}
 	return (smallestDistance);
 }
 
@@ -91,9 +98,17 @@ int		Span::longestSpan()
 	int					longestDistance = std::abs(v.at(1) - v.at(0));
 	
 	std::sort(v.begin(), v.end());
-	for (std::vector<int>::iterator i = v.begin() ; i != v.end() - 1 ; i++)
-		if (std::abs(*(i + 1) - *i) > longestDistance)
-			longestDistance = std::abs(*(i + 1) - *i);
+	
+	std::cout << "longest = " << longestDistance << std::endl;
+	
+	for (std::vector<int>::iterator i = v.begin() ; i != v.end() ; i++)
+	{
+		std::vector<int>::iterator j = i;
+		j++;
+		// std::cout << "i = " << *i << "; j = " << *j << std::endl;
+		if (std::abs(*j - *i) > longestDistance)
+			longestDistance = std::abs(*j - *i);
+	}
 	return (longestDistance);
 }
 
