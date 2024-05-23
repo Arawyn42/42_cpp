@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 22:52:53 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/10 02:41:53 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/23 19:23:31 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ int	main()
 		std::cout << "5 pushed at the top of the stack.\n";
 		mstack.push(17);
 		std::cout << "\n17 pushed at the top of the stack.\n";
+		mstack.push(11);
+		std::cout << "\n11 pushed at the top of the stack.\n";
 		
 		std::cout << "\nFirst element: " << mstack.top() << std::endl;
 		
 		mstack.pop();
 		std::cout << "\nTop element deleted.\n";
-		std::cout << "\nStack's size:" << mstack.size() << std::endl;
+		std::cout << "\nStack's size: " << mstack.size() << std::endl;
 		
 		mstack.push(3);
 		std::cout << "\n3 pushed at the top of the stack.\n";
@@ -43,8 +45,16 @@ int	main()
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
 		
+		std::cout << "\nIterator at begin: " << *it << std::endl;
 		++it;
+		std::cout << "\n++it: " << *it << std::endl;
 		--it;
+		std::cout << "\n--it: " << *it << std::endl;
+		
+		ite--;
+		std::cout << "\nIterator at end: " << *ite << std::endl;
+		ite++;
+		
 		std::cout << "\nIterators:\n";
 		while (it != ite)
 		{
@@ -64,12 +74,14 @@ int	main()
 		std::cout << "5 pushed at the top of the stack.\n";
 		list.push_back(17);
 		std::cout << "\n17 pushed at the top of the stack.\n";
+		list.push_back(11);
+		std::cout << "\n11 pushed at the top of the stack.\n";
 		
 		std::cout << "\nFirst element: " << list.back() << std::endl;
 		
 		list.pop_back();
 		std::cout << "\nTop element deleted.\n";
-		std::cout << "\nStack's size:" << list.size() << std::endl;
+		std::cout << "\nStack's size: " << list.size() << std::endl;
 		
 		list.push_back(3);
 		std::cout << "\n3 pushed at the top of the stack.\n";
@@ -83,8 +95,16 @@ int	main()
 		std::list<int>::iterator it = list.begin();
 		std::list<int>::iterator ite = list.end();
 		
+		std::cout << "\nIterator at begin: " << *it << std::endl;
 		++it;
+		std::cout << "\n++it: " << *it << std::endl;
 		--it;
+		std::cout << "\n--it: " << *it << std::endl;
+		
+		ite--;
+		std::cout << "\nIterator at end: " << *ite << std::endl;
+		ite++;
+		
 		std::cout << "\nIterators:\n";
 		while (it != ite)
 		{
