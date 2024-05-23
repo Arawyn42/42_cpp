@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:08:17 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/22 18:19:12 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/23 17:17:21 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class Span
 		int		shortestSpan();
 		int		longestSpan();
 		void	printElements();
+		void	printElementsSorted();
 
 	private:
 		Span();

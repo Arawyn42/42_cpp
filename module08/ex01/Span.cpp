@@ -6,7 +6,7 @@
 /*   By: drenassi <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:20:11 by drenassi          #+#    #+#             */
-/*   Updated: 2024/05/22 18:58:35 by drenassi         ###   ########.fr       */
+/*   Updated: 2024/05/23 17:37:47 by drenassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ int		Span::shortestSpan()
 		throw (Span::NotEnoughElementsException());
 	
 	std::vector<int>	v = this->_elements;
-	int					smallestDistance = std::abs(v.at(1) - v.at(0));
-	
 	std::sort(v.begin(), v.end());
+	
+	int	smallestDistance = std::abs(v.at(1) - v.at(0));
+	
 	
 	for (std::vector<int>::iterator i = v.begin() ; i != v.end() ; i++)
 	{
@@ -95,17 +96,17 @@ int		Span::longestSpan()
 		throw (Span::NotEnoughElementsException());
 	
 	std::vector<int>	v = this->_elements;
-	int					longestDistance = std::abs(v.at(1) - v.at(0));
-	
 	std::sort(v.begin(), v.end());
 	
-	std::cout << "longest = " << longestDistance << std::endl;
+	int	longestDistance = std::abs(v.at(1) - v.at(0));
+	
 	
 	for (std::vector<int>::iterator i = v.begin() ; i != v.end() ; i++)
 	{
 		std::vector<int>::iterator j = i;
 		j++;
-		// std::cout << "i = " << *i << "; j = " << *j << std::endl;
+		if (j == v.end())
+			break ;
 		if (std::abs(*j - *i) > longestDistance)
 			longestDistance = std::abs(*j - *i);
 	}
@@ -126,4 +127,14 @@ void	Span::printElements()
 		}
 		std::cout << std::endl;
 	}
+}
+
+void	Span::printElementsSorted()
+{
+	std::vector<int>	cpy = _elements;
+	
+	std::sort(_elements.begin(), _elements.end());
+	printElements();
+	
+	_elements = cpy;
 }
