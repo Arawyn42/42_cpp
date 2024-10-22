@@ -5,6 +5,8 @@
 
 ## <div align="center">📃 Subjects</div>
 You can find the subject for each module in the corresponding folder. Here are the links to the subjects:
+<div style="text-align: center;">
+
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
 |-----------|-----------|-----------|-----------|-----------|
 | [Subject 00](modules/module00/fr.subject.pdf) | [Subject 01](modules/module01/en.subject.pdf) | [Subject 02](modules/module02/fr.subject.pdf) | [Subject 03](modules/module03/fr.subject.pdf) | [Subject 04](modules/module04/fr.subject.pdf) |
@@ -13,7 +15,7 @@ You can find the subject for each module in the corresponding folder. Here are t
 |-----------|-----------|-----------|-----------|-----------|
 | [Subject 05](modules/module05/en.subject.pdf) | [Subject 06](modules/module06/en.subject.pdf) | [Subject 07](modules/module07/en.subject.pdf) | [Subject 08](modules/module08/fr.subject.pdf) | [Subject 09](modules/module09/en.subject.pdf) |
 
-<br>
+</div><br>
 
 ## <div align="center">✅ Grades</div>
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
