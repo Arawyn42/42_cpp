@@ -45,7 +45,7 @@ The STL were forbidden too, excepted for the last 2 modules.
 I did this project during 42 cursus, at 42 Perpignan, between April and June of 2024. A grade of 80% is needed to validate a module. I did all bonuses.
 <br><br>
 
-## Usage
+## <div align="center">💻 Usage</div>
 Clone the repository and enter in it:
 ```sh
 git clone https://github.com/Arawyn42/42_cpp.git && cd 42_cpp/modules
