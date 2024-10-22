@@ -9,7 +9,8 @@ You can find the subject for each module in the corresponding folder. Here are t
 | Module 05 | Module 06 | Module 07 | Module 08 | Module 09 |
 |-----------|-----------|-----------|-----------|-----------|
 | [Subject 05](modules/module05/en.subject.pdf) | [Subject 06](modules/module06/en.subject.pdf) | [Subject 07](modules/module07/en.subject.pdf) | [Subject 08](modules/module08/fr.subject.pdf) | [Subject 09](modules/module09/en.subject.pdf) |
-<br><br>
+
+<br>
 
 ## <div align="center">✅ Grades</div>
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
@@ -20,7 +21,7 @@ You can find the subject for each module in the corresponding folder. Here are t
 |-----------|-----------|-----------|-----------|-----------|
 | ![drenassi's 42 CPP Module 05 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 06 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 07 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 08 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 09 Score](ressources/grade.png) |
 
-<br><br>
+<br>
 
 ## <div align="center">📄 Introduction</div>
 This project is divided into 10 modules. The aim is to learn C++ langage. Each module introduces one or multiple C++ notions.
