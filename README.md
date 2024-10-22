@@ -5,7 +5,8 @@
 
 ## <div align="center">📃 Subjects</div>
 You can find the subject for each module in the corresponding folder. Here are the links to the subjects:
-<div style="text-align: center;">
+
+<div align="center">
 
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
 |-----------|-----------|-----------|-----------|-----------|
