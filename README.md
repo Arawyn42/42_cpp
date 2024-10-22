@@ -1,4 +1,7 @@
-# <div align="center">⚙️ CPP Modules (a [42](https://42perpignan.fr/) project) ⚙️</div>
+<div align="center">
+  <h1>⚙️ CPP Modules (a <a href="https://42perpignan.fr/">42</a> project) ⚙️</h1>
+  <img src="ressources/preview.gif" alt="Preview">
+</div><br>
 
 ## <div align="center">📃 Subjects</div>
 You can find the subject for each module in the corresponding folder. Here are the links to the subjects:
