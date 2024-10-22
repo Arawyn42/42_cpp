@@ -4,9 +4,9 @@
 </div><br>
 
 ## <div align="center">📃 Subjects</div>
-You can find the subject for each module in the corresponding folder. Here are the links to the subjects:
 
 <div align="center">
+You can find the subject for each module in the corresponding folder. Here are the links to the subjects:
 
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
 |-----------|-----------|-----------|-----------|-----------|
@@ -19,6 +19,9 @@ You can find the subject for each module in the corresponding folder. Here are t
 </div><br>
 
 ## <div align="center">✅ Grades</div>
+
+<div align="center">
+
 | Module 00 | Module 01 | Module 02 | Module 03 | Module 04 |
 |-----------|-----------|-----------|-----------|-----------|
 | ![drenassi's 42 CPP Module 00 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 01 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 02 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 03 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 04 Score](ressources/grade.png) |
@@ -27,7 +30,7 @@ You can find the subject for each module in the corresponding folder. Here are t
 |-----------|-----------|-----------|-----------|-----------|
 | ![drenassi's 42 CPP Module 05 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 06 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 07 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 08 Score](ressources/grade.png) | ![drenassi's 42 CPP Module 09 Score](ressources/grade.png) |
 
-<br>
+</div><br>
 
 ## <div align="center">📄 Introduction</div>
 This project is divided into 10 modules. The aim is to learn C++ langage. Each module introduces one or multiple C++ notions.
